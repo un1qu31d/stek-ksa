@@ -985,3 +985,97 @@ hr.theme--light {
     grid-template-columns: repeat(2, 50%);
   }
 }
+/* FEATURES */
+.component.type--features {
+  display: grid;
+}
+  .component.type--features .content {
+    align-self: stretch;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-gap: 32px;
+    align-content: space-between;
+  }
+    .component.type--features .content .title {
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: var(--theme-primary__color--2);
+    }
+    .component.type--features .content .details {
+      display: grid;
+      grid-gap: 32px;
+      align-content: space-between;
+      color: #707070;
+    }
+  .component.type--features .image {
+    height: 320px;
+  }
+    .component.type--features .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: 50% 50%;
+    }
+  .component.type--features .features {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-content: end;
+    align-content: center;
+  }
+    .component.type--features .features .feature {
+      border: 1px solid #c0c0c0;
+      padding: 16px;
+      display: grid;
+      grid-gap: 8px;
+      align-content: start;
+      text-align: center;
+      color: var(--theme-primary__color--1);
+    }
+    .component.type--features .features .feature:nth-child(1), .component.type--features .features .feature:nth-child(2) {
+      border-top-width: 0;
+    }
+    .component.type--features .features .feature:nth-last-child(1), .component.type--features .features .feature:nth-last-child(2) {
+      border-bottom-width: 0;
+    }
+    [dir="ltr"] .component.type--features .features .feature:nth-child(odd), [dir="rtl"] .component.type--features .features .feature:nth-child(even) {
+      border-left-width: 0;
+    }
+    [dir="ltr"] .component.type--features .features .feature:nth-child(even), [dir="rtl"] .component.type--features .features .feature:nth-child(odd) {
+      border-right-width: 0;
+    }
+    .component.type--features .features .feature .icon {
+      height: 56px;
+    }
+      .component.type--features .features .feature .icon img {
+        margin: 0 auto;
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: 50% 50%;
+      }
+    .component.type--features .features .feature .name {
+      font-weight: bold;
+    }
+    .component.type--features .features .feature .note {
+    }
+@media (min-width: 960px) {
+.component.type--features {
+  padding: 64px 0;
+}
+}
+@media (max-width: 959px) {
+.component.type--features {
+  padding: 32px 0;
+}
+}
+@media (min-width: 640px) {
+.component.type--features {
+  grid-template-columns: 40% 20% 40%;
+  justify-content: space-between;
+  align-items: center;
+}
+}
+@media (max-width: 639px) {
+.component.type--features {
+}
+}
