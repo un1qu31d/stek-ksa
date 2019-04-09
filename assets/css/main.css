@@ -34,6 +34,8 @@ hr {
   --theme-primary__color--1--rgb: 147, 26, 29;
   --theme-primary__color--2: #221f20;
   --theme-primary__color--3: #3f3f3f;
+  --theme-primary__color--4: #eaeaea;
+  --theme-primary__color--5: #a5a5a5;
   --theme-primary__messages__color--1: #212121;
   --theme-primary__messages__color--2: #F5F5F5;
   --theme-primary__messages__color--3: #BDBDBD;
@@ -121,6 +123,35 @@ hr.theme--light {
   display: grid;
   align-items: stretch;
 }
+.section.theme--testimonials {
+  position: relative;
+  background-color: var(--theme-primary__color--4);
+  color: var(--theme-primary__color--5);
+}
+  .section.theme--testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: var(--theme-primary__color--1);
+  }
+@media (min-width: 960px) {
+  .section.theme--testimonials::before {
+    width: calc((100% - var(--container__width)) / 2);
+  }
+  [dir="ltr"] .section.theme--testimonials::before {
+    left: 0;
+  }
+  [dir="rtl"] .section.theme--testimonials::before {
+    right: 0;
+  }
+}
+@media (max-width: 959px) {
+  .section.theme--testimonials::before {
+    right: 0;
+    left: 0;
+  }
+}
 .section.size-container {
   padding-right: calc((100% - var(--container__width)) / 2);
   padding-left: calc((100% - var(--container__width)) / 2);
@@ -130,6 +161,9 @@ hr.theme--light {
   padding-right: calc((100% - var(--container__max-width)) / 2);
   padding-left: calc((100% - var(--container__max-width)) / 2);
 }
+  .section.theme--testimonials::before {
+    width: calc((100% - var(--container__max-width)) / 2);
+  }
 }
 /* SYS MESSAGES */
 .component.type--sys-messages {
@@ -708,12 +742,14 @@ hr.theme--light {
     .component.type--newsletter input, .component.type--newsletter button {
       box-sizing: border-box;
       outline-width: 0;
-      border-width: 0;
+      border-width: 1px;
+      border-style: solid;
       padding: 0.6rem;
       line-height: 1;
       color: #fff;
     }
     .component.type--newsletter input {
+      border-color: #343434;
       background-color: #343434;
     }
     .component.type--newsletter input.error {
@@ -721,6 +757,7 @@ hr.theme--light {
     }
     .component.type--newsletter button {
       cursor: pointer;
+      border-color: var(--theme-primary__color--1);
       padding-right: 32px;
       padding-left: 32px;
       background-color: var(--theme-primary__color--1);
@@ -1078,4 +1115,238 @@ hr.theme--light {
 @media (max-width: 639px) {
 .component.type--features {
 }
+}
+/* TESTIMONIALS */
+.component.type--testimonials {
+  display: grid;
+  background-color: #fff;
+}
+  .component.type--testimonials .content {
+    align-self: stretch;
+    padding: 64px 0;
+    display: grid;
+    grid-gap: 16px;
+    align-content: center;
+    background-color: var(--theme-primary__color--1);
+    color: #fff;
+  }
+    .component.type--testimonials .content .title {
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
+    .component.type--testimonials .content .description {
+      display: grid;
+      grid-gap: 16px;
+    }
+      .component.type--testimonials .content .description ::first-letter {
+        text-transform: uppercase;
+      }
+    .component.type--testimonials .content .details {
+      display: grid;
+      grid-gap: 16px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+      .component.type--testimonials .content .details ::first-letter {
+        text-transform: uppercase;
+      }
+  .component.type--testimonials .testimonials {
+    position: relative;
+    margin: 0 64px;
+    height: calc((32px * 2) + 36px + 96px + 1.2rem + 6rem + 22px);
+    overflow: hidden;
+  }
+    .component.type--testimonials .testimonial {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      padding: 32px 0;
+      display: grid;
+      grid-gap: 12px;
+      transform: translateY(-100%);
+    }
+    .component.type--testimonials .testimonial.transition {
+      transition: transform 1s linear;
+    }
+      .component.type--testimonials .testimonial .image {
+        position: relative;
+        width: 96px;
+        height: 96px;
+      }
+        .component.type--testimonials .testimonial .image::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          width: 30px;
+          height: 23px;
+          background-image: url('../img/quotation.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: 50% 50%;
+        }
+        [dir="ltr"] .component.type--testimonials .testimonial .image::before {
+          left: calc(100% - 8px);
+        }
+        [dir="rtl"] .component.type--testimonials .testimonial .image::before {
+          right: calc(100% - 8px);
+        }
+        .component.type--testimonials .testimonial .image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 50% 50%;
+        }
+      .component.type--testimonials .testimonial .name {
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        line-height: 1rem;
+        color: var(--theme-primary__color--2);
+      }
+      .component.type--testimonials .testimonial .review {
+        height: 6rem;
+        overflow: hidden;
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+      }
+      .component.type--testimonials .testimonial .rating {
+      }
+        .component.type--testimonials .testimonial .stars {
+          display: grid;
+          grid-auto-flow: column;
+          grid-gap: 2px;
+          justify-content: start;
+        }
+          .component.type--testimonials .testimonial .star {
+            width: 25px;
+            height: 22px;
+            background-image: url('../img/star.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50% 50%;
+          }
+  .component.type--testimonials .controllers {
+  }
+    .component.type--testimonials .navigator {
+    }
+      .component.type--testimonials .navigator .controller {
+        cursor: pointer;
+        position: relative;
+        width: 32px;
+        text-align: center;
+        font-size: 2rem;
+      }
+@media (min-width: 960px) {
+.component.type--testimonials {
+  grid-template-columns: 30% 1fr;
+  align-items: center;
+}
+  [dir="ltr"] .component.type--testimonials .content {
+    padding-right: 64px;
+  }
+  [dir="rtl"] .component.type--testimonials .content {
+    padding-left: 64px;
+  }
+  .component.type--testimonials .navigator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc((100% - var(--container__width)) / 2);
+    display: grid;
+    justify-content: start;
+    align-content: center;
+    grid-gap: 16px;
+    color: #fff;
+  }
+  [dir="ltr"] .component.type--testimonials .navigator {
+    left: calc(100% - ((100% - var(--container__width)) / 2));
+  }
+  [dir="rtl"] .component.type--testimonials .navigator {
+    right: calc(100% - ((100% - var(--container__width)) / 2));
+  }
+}
+@media (max-width: 959px) {
+.component.type--testimonials {
+  position: relative;
+}
+  .component.type--testimonials .content {
+    justify-items: center;
+    padding: 32px;
+    text-align: center;
+  }
+    .component.type--testimonials .testimonial {
+      justify-items: center;
+    }
+      .component.type--testimonials .testimonial .review {
+        text-align: center;
+      }
+      .component.type--testimonials .navigator .controller {
+        position: absolute;
+        bottom: calc(32px + 22px + 12px + 4.6rem);
+      }
+      [dir="ltr"] .component.type--testimonials .navigator .controller.next, [dir="rtl"] .component.type--testimonials .navigator .controller.previous {
+        right: 0;
+      }
+      [dir="rtl"] .component.type--testimonials .navigator .controller.next, [dir="ltr"] .component.type--testimonials .navigator .controller.previous {
+        left: 0;
+      }
+}
+@media (min-width: 640px) {
+    .component.type--testimonials .testimonial {
+      width: calc((100% - (24px * 2)) / 3);
+    }
+    [dir="ltr"] .component.type--testimonials .testimonial.start {
+      transform: translateY(0);
+      transform: translateX(calc(300% + (24px * 3)));
+    }
+    [dir="ltr"] .component.type--testimonials .testimonial.next {
+      transform: translateY(0);
+      transform: translateX(calc(200% + (24px * 2)));
+    }
+    [dir="rtl"] .component.type--testimonials .testimonial.start, [dir="ltr"] .component.type--testimonials .testimonial.active {
+      transform: translateY(0);
+      transform: translateX(calc(100% + (24px * 1)));
+    }
+    [dir="rtl"] .component.type--testimonials .testimonial.next, [dir="ltr"] .component.type--testimonials .testimonial.previous {
+      transform: translateY(0);
+      transform: translateX(0);
+    }
+    [dir="rtl"] .component.type--testimonials .testimonial.active, [dir="ltr"] .component.type--testimonials .testimonial.end {
+      transform: translateY(0);
+      transform: translateX(calc(-100% - (24px * 1)));
+    }
+    [dir="rtl"] .component.type--testimonials .testimonial.previous {
+      transform: translateY(0);
+      transform: translateX(calc(-200% - (24px * 2)));
+    }
+    [dir="rtl"] .component.type--testimonials .testimonial.end {
+      transform: translateY(0);
+      transform: translateX(calc(-300% - (24px * 3)));
+    }
+}
+@media (max-width: 639px) {
+    .component.type--testimonials .testimonial {
+      width: 100%;
+    }
+    [dir="ltr"] .component.type--testimonials .testimonial.start, [dir="ltr"] .component.type--testimonials .testimonial.next, [dir="rtl"] .component.type--testimonials .testimonial.previous, [dir="rtl"] .component.type--testimonials .testimonial.end {
+      transform: translateY(0);
+      transform: translateX(100%);
+    }
+    .component.type--testimonials .testimonial.active {
+      transform: translateY(0);
+      transform: translateX(0);
+    }
+    [dir="rtl"] .component.type--testimonials .testimonial.start, [dir="rtl"] .component.type--testimonials .testimonial.next, [dir="ltr"] .component.type--testimonials .testimonial.previous, [dir="ltr"] .component.type--testimonials .testimonial.end {
+      transform: translateY(0);
+      transform: translateX(-100%);
+    }
+}
+@media (min-width: calc(960px * (1 + ((100 - 92) / 100)))) {
+    .component.type--testimonials .navigator {
+      width: calc((100% - var(--container__max-width)) / 2);
+    }
+    [dir="ltr"] .component.type--testimonials .navigator {
+      left: calc(100% - ((100% - var(--container__max-width)) / 2));
+    }
+    [dir="rtl"] .component.type--testimonials .navigator {
+      right: calc(100% - ((100% - var(--container__max-width)) / 2));
+    }
 }
