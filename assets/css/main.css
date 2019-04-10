@@ -736,6 +736,9 @@ hr.theme--light {
 .component.type--grid.theme--support {
   grid-template-columns: repeat(2, 50%)
 }
+.component.type--grid.theme--inner {
+  grid-auto-flow: row;
+}
 }
 @media (max-width: 639px) {
 .component.type--grid {
