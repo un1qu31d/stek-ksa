@@ -1429,3 +1429,43 @@ hr.theme--light {
     .component.type--information .details p::first-letter {
       text-transform: uppercase;
     }
+/* ARTICLE */
+.component.type--article {
+  padding: 64px 0;
+  color: #707070;
+}
+  .component.type--article .image {
+    margin: 128px 0;
+    max-width: 33.33%;
+  }
+  [dir="ltr"] .component.type--article .image {
+    float: right;
+    margin-left: 48px;
+  }
+  [dir="rtl"] .component.type--article .image {
+    float: left;
+    margin-right: 48px;
+  }
+    .component.type--article .image img {
+      display: block;
+      width: 100%;
+    }
+  .component.type--article .content {
+  }
+    .component.type--article .content > *:not(:last-child) {
+      margin-bottom: 12px;
+    }
+    .component.type--article .content h2 {
+      font-size: 1.2rem;
+    }
+    .component.type--article .content p {
+    }
+    [dir="ltr"] .component.type--article .content ul {
+      padding-left: 1rem;
+    }
+    [dir="rtl"] .component.type--article .content ul {
+      padding-right: 1rem;
+    }
+      .component.type--article .content li {
+        list-style-type: circle;
+      }
