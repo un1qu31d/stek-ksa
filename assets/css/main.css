@@ -722,6 +722,10 @@ hr.theme--light {
   .component.type--grid.theme--footer .grid__item {
     
   }
+.component.type--grid.theme--inner {
+  padding: 64px 0;
+  grid-gap: 32px;
+}
 @media (min-width: 640px) {
 .component.type--grid {
   grid-auto-flow: column;
@@ -1416,7 +1420,6 @@ hr.theme--light {
 .component.type--information {
   display: grid;
   grid-gap: 12px;
-  padding: 64px 0;
   color: #707070;
 }
   .component.type--information .heading {
@@ -1431,7 +1434,6 @@ hr.theme--light {
     }
 /* ARTICLE */
 .component.type--article {
-  padding: 64px 0;
   color: #707070;
 }
   .component.type--article .image {
