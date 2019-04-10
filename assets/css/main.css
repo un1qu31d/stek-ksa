@@ -1475,3 +1475,143 @@ hr.theme--light {
       .component.type--article .content li {
         list-style-type: circle;
       }
+/* PRODUCT */
+.component.type--product {
+  display: grid;
+  align-content: stretch;
+}
+  .component.type--product .visual {
+    display: grid;
+    align-content: space-around;
+    grid-gap: 32px;
+  }
+    .component.type--product .visual .specifications {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 30% 1fr;
+      grid-gap: 24px;
+    }
+      .component.type--product .visual .specifications__image {
+      }
+        .component.type--product .visual .specifications__image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        [dir="ltr"] .component.type--product .visual .specifications__image img {
+          object-position: 100% 50%;
+        }
+        [dir="rtl"] .component.type--product .visual .specifications__image img {
+          object-position: 0% 50%;
+        }
+      .component.type--product .visual .specifications__list {
+        display: grid;
+        align-content: space-around;
+        grid-gap: 12px;
+        padding: 24px 0;
+      }
+        .component.type--product .visual .specifications__list li {
+          position: relative;
+          font-weight: bold;
+          color: var(--theme-primary__color--1);
+        }
+        .component.type--product .visual .specifications__list li:first-child, .component.type--product .visual .specifications__list li:last-child {
+          color: var(--theme-primary__color--2);
+        }
+          .component.type--product .visual .specifications__list li::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 48px;
+            height: 1px;
+            background-color: var(--theme-primary__color--1);
+          }
+          [dir="ltr"] .component.type--product .visual .specifications__list li::before {
+            left: -56px;
+          }
+          [dir="rtl"] .component.type--product .visual .specifications__list li::before {
+            right: -56px;
+          }
+    .component.type--product .visual .image {
+      position: relative;
+      z-index: 1;
+      height: 40vh;
+      min-height: 240px;
+      background-color: var(--theme-primary__color--1);
+    }
+      .component.type--product .visual .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+      }
+  .component.type--product .content {
+
+  }
+    .component.type--product .content .card {
+      position: relative;
+      padding: 0 16% 64px;
+      display: grid;
+      grid-gap: 48px;
+      justify-content: stretch;
+      align-content: start;
+    }
+      .component.type--product .content .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        margin: 1rem 0;
+        border: 2px solid var(--theme-primary__color--1);
+      }
+      .component.type--product .content .card .title {
+        position: relative;
+        margin: 0 -16px;
+        padding: 0 16px;
+        justify-self: start;
+        background-color: #fff;
+        text-transform: uppercase;
+        font-size: 2rem;
+        line-height: 1;
+        color: var(--theme-primary__color--2);
+      }
+      .component.type--product .content .card .information {
+        display: grid;
+        grid-gap: 32px;
+      }
+        .component.type--product .content .card .heading {
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: var(--theme-primary__color--1);
+        }
+        .component.type--product .content .card .details {
+          display: grid;
+          grid-gap: 16px;
+          color: #707070;
+        }
+    .component.type--product .content .note {
+      text-align: end;
+      font-weight: bold;
+      color: var(--theme-primary__color--1);
+    }
+@media (min-width: 640px) {
+.component.type--product {
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 50%);
+  justify-content: space-between;
+}
+    [dir="ltr"] .component.type--product .visual .image {
+      margin-right: -32px;
+    }
+    [dir="rtl"] .component.type--product .visual .image {
+      margin-left: -32px;
+    }
+}
+@media (max-width: 639px) {
+.component.type--product {
+  grid-gap: 32px;
+}
+}
