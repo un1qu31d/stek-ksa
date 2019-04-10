@@ -1412,3 +1412,20 @@ hr.theme--light {
           object-fit: contain;
           object-position: 50% 50%;
         }
+/* INFORMATION */
+.component.type--information {
+  display: grid;
+  grid-gap: 12px;
+  padding: 64px 0;
+  color: #707070;
+}
+  .component.type--information .heading {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .component.type--information .details {
+  }
+    .component.type--information .details p::first-letter {
+      text-transform: uppercase;
+    }
