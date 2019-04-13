@@ -1615,3 +1615,145 @@ hr.theme--light {
   grid-gap: 32px;
 }
 }
+/* VISUALIZER */
+.component.type--visualizer {
+  position: relative;
+}
+  .component.type--visualizer .background, .component.type--visualizer .choices, .component.type--visualizer .front {
+    position: absolute;
+    top: 0;
+  }
+  .component.type--visualizer .background, .component.type--visualizer .front {
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .component.type--visualizer .background {
+    background-image: url(../img/visualizer__background.png);
+  }
+  .component.type--visualizer .choices {
+    right: 10%;
+    left: 10%;
+    padding-top: 21.875%;
+  }
+    .component.type--visualizer .choice {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      padding-top: 2rem;
+      width: 20%;
+      transition: all 1s linear;
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      color: #fff;
+    }
+    .component.type--visualizer .choice:nth-child(1) {
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .component.type--visualizer .choice:nth-child(2) {
+      left: 20%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .component.type--visualizer .choice:nth-child(3) {
+      left: 40%;
+      background-color: rgba(0, 0, 0, 0.65);
+    }
+    .component.type--visualizer .choice:nth-child(4) {
+      left: 60%;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+    .component.type--visualizer .choice:nth-child(5) {
+      left: 80%;
+      background-color: rgba(0, 0, 0, 0.95);
+    }
+    .component.type--visualizer .choices:hover .choice:not(:hover) {
+      transform: scale(0);
+    }
+    .component.type--visualizer .choice:hover {
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+      .component.type--visualizer .choice::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+  .component.type--visualizer .front {
+    background-image: url(../img/visualizer__front.png);
+  }
+  .component.type--visualizer .content {
+    position: relative;
+    display: grid;
+    grid-gap: 32px;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+    .component.type--visualizer .content .title {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--theme-primary__color--2);
+    }
+    .component.type--visualizer .content .features {
+      display: grid;
+      grid-gap: 12px;
+      color: var(--theme-primary__color--1);
+    }
+      .component.type--visualizer .content .feature {
+        display: grid;
+        grid-gap: 12px;
+        align-content: start;
+        text-align: center;
+      }
+        .component.type--visualizer .content .feature .name {
+          font-weight: bold;
+        }
+        .component.type--visualizer .content .feature .details {
+        }
+@media (min-width: 960px) {
+.component.type--visualizer {
+  padding-top: calc(21.875% + 64px);
+  padding-right: calc(((100% - var(--container__width)) / 2) + 64px);
+  padding-bottom: 64px;
+  padding-left: calc(((100% - var(--container__width)) / 2) + 64px);
+}
+  .component.type--visualizer .content {
+    padding: 64px;
+  }
+}
+@media (max-width: 959px) {
+.component.type--visualizer {
+  padding-top: calc(21.875% + 32px);
+  padding-right: calc(((100% - var(--container__width)) / 2) + 32px);
+  padding-bottom: 32px;
+  padding-left: calc(((100% - var(--container__width)) / 2) + 32px);
+}
+  .component.type--visualizer .content {
+    padding: 32px;
+  }
+}
+@media (min-width: 640px) {
+    .component.type--visualizer .content .features {
+      grid-auto-flow: column;
+      grid-template-columns: repeat(3, calc((100% - (24px * 2)) / 3));
+    }
+}
+@media (max-width: 659px) {
+  .component.type--visualizer .content {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+  }
+}
+@media (min-width: calc(960px * (1 + ((100 - 92) / 100)))) {
+.component.type--visualizer {
+  padding-right: calc(((100% - var(--container__max-width)) / 2) + 64px);
+  padding-left: calc(((100% - var(--container__max-width)) / 2) + 64px);
+}
+}
