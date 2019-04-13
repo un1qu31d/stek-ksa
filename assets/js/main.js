@@ -52,3 +52,6 @@ sysMessages.forEach(messages => messages.init());
 [...document.querySelectorAll('.component.type--slider')].map(element => new Slider({selector: element})).forEach(slider => slider.init());
 
 [...document.querySelectorAll('.component.type--testimonials')].map(element => new SliderTestimonial({selector: element})).forEach(slider => slider.init());
+
+const applicationFromMessages = [...document.querySelectorAll('.component.type--application-form-messages')].map(element => new Messages({selector: element}));
+applicationFromMessages.forEach(messages => messages.init());

@@ -1832,3 +1832,62 @@ hr.theme--light {
     grid-column-end: span 2;
   }
 }
+/* APPLICATION FORM MESSAGES */
+.component.type--application-form-messages {
+}
+  .component.type--application-form-messages .messages {
+    display: grid;
+    align-items: end;
+    grid-row-gap: 8px;
+  }
+    .component.type--application-form-messages .message {
+      position: relative;
+      box-sizing: border-box;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 8px;
+      width: 100%;
+      padding: 8px 16px;
+      line-height: 1.8em;
+    }
+    .component.type--application-form-messages .message {
+      color: var(--theme-primary__messages__color--1);
+      background-color: var(--theme-primary__messages__color--2);
+      border-color: var(--theme-primary__messages__color--3);
+    }
+    .component.type--application-form-messages .message.success {
+      color: var(--theme-primary__messages--success__color--1);
+      background-color: var(--theme-primary__messages--success__color--2);
+      border-color: var(--theme-primary__messages--success__color--3);
+    }
+    .component.type--application-form-messages .message.info {
+      color: var(--theme-primary__messages--info__color--1);
+      background-color: var(--theme-primary__messages--info__color--2);
+      border-color: var(--theme-primary__messages--info__color--3);
+    }
+    .component.type--application-form-messages .message.warning {
+      color: var(--theme-primary__messages--warning__color--1);
+      background-color: var(--theme-primary__messages--warning__color--2);
+      border-color: var(--theme-primary__messages--warning__color--3);
+    }
+    .component.type--application-form-messages .message.danger {
+      color: var(--theme-primary__messages--danger__color--1);
+      background-color: var(--theme-primary__messages--danger__color--2);
+      border-color: var(--theme-primary__messages--danger__color--3);
+    }
+      .component.type--application-form-messages .message .close {
+        cursor: pointer;
+        position: absolute;
+        top: 8px;
+        line-height: 1;
+      }
+      [dir="ltr"] .component.type--application-form-messages .message .close {
+        right: 8px;
+      }
+      [dir="rtl"] .component.type--application-form-messages .message .close {
+        left: 8px;
+      }
+      .component.type--application-form-messages .message .title {
+        text-transform: capitalize;
+        font-weight: bold;
+      }
