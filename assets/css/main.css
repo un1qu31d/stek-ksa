@@ -842,6 +842,7 @@ hr.theme--light {
 /* BRIEF */
 .component.type--brief {
   display: grid;
+  overflow: hidden;
 }
   .component.type--brief .branches {
     position: relative;
@@ -1073,6 +1074,7 @@ hr.theme--light {
 /* FEATURES */
 .component.type--features {
   display: grid;
+  overflow: hidden;
 }
   .component.type--features .content {
     align-self: stretch;
