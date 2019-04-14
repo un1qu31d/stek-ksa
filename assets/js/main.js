@@ -55,3 +55,5 @@ sysMessages.forEach(messages => messages.init());
 
 const applicationFromMessages = [...document.querySelectorAll('.component.type--application-form-messages')].map(element => new Messages({selector: element}));
 applicationFromMessages.forEach(messages => messages.init());
+
+AOS.init();
