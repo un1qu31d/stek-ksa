@@ -1771,7 +1771,7 @@ hr.theme--light {
       grid-template-columns: repeat(3, calc((100% - (24px * 2)) / 3));
     }
 }
-@media (max-width: 659px) {
+@media (max-width: 639px) {
   .component.type--visualizer .content {
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
     border-radius: 4px;
