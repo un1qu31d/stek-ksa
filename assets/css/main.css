@@ -688,7 +688,30 @@ hr.theme--light {
     color: #fff;
   }
     .component.type--cover .icon {
-      font-size: 2rem;
+      height: 48px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+    .component.type--cover .icon.type--about {
+      width: 48px;
+      background-image: url('../img/icon__cover__about.png');
+    }
+    .component.type--cover .icon.type--contact {
+      width: 48px;
+      background-image: url('../img/icon__cover__contact.png');
+    }
+    .component.type--cover .icon.type--paint-protection-film {
+      width: 48px;
+      background-image: url('../img/icon__cover__paint-protection-film.png');
+    }
+    .component.type--cover .icon.type--warranty {
+      width: 48px;
+      background-image: url('../img/icon__cover__warranty.png');
+    }
+    .component.type--cover .icon.type--window-film {
+      width: 48px;
+      background-image: url('../img/icon__cover__window-film.png');
     }
     .component.type--cover .title {
       font-size: 2rem;
