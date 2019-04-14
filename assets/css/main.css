@@ -86,7 +86,7 @@ hr.theme--light {
 .section.theme--sys-messages {
   position: fixed;
   bottom: 0;
-  z-index: 1;
+  z-index: 10;
   width: 92%;
   max-width: 320px;
   max-height: 100%;
@@ -103,7 +103,7 @@ hr.theme--light {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.3);
 }
   .section.theme--header::before {
@@ -844,7 +844,8 @@ hr.theme--light {
   display: grid;
 }
   .component.type--brief .branches {
-
+    position: relative;
+    z-index: 1;
   }
     .component.type--brief .branches .image {
     }
@@ -864,8 +865,6 @@ hr.theme--light {
       color: #fff;
     }
       .component.type--brief .branches .details p {
-        position: relative;
-        z-index: 1;
       }
   .component.type--brief .card {
     position: relative;
@@ -1507,6 +1506,8 @@ hr.theme--light {
   align-content: stretch;
 }
   .component.type--product .visual {
+    position: relative;
+    z-index: 1;
     display: grid;
     align-content: space-around;
     grid-gap: 32px;
@@ -1559,8 +1560,6 @@ hr.theme--light {
             right: -56px;
           }
     .component.type--product .visual .image {
-      position: relative;
-      z-index: 1;
       height: 40vh;
       min-height: 240px;
       background-color: var(--theme-primary__color--1);
