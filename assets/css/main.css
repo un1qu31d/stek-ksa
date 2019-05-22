@@ -700,23 +700,23 @@ hr.theme--light {
     }
     .component.type--cover .icon.type--about {
       width: 48px;
-      background-image: url('../img/icon__cover__about.png');
+      background-image: url('../img/icon__cover__about.jpg');
     }
     .component.type--cover .icon.type--contact {
       width: 48px;
-      background-image: url('../img/icon__cover__contact.png');
+      background-image: url('../img/icon__cover__contact.jpg');
     }
     .component.type--cover .icon.type--paint-protection-film {
       width: 48px;
-      background-image: url('../img/icon__cover__paint-protection-film.png');
+      background-image: url('../img/icon__cover__paint-protection-film.jpg');
     }
     .component.type--cover .icon.type--warranty {
       width: 48px;
-      background-image: url('../img/icon__cover__warranty.png');
+      background-image: url('../img/icon__cover__warranty.jpg');
     }
     .component.type--cover .icon.type--window-film {
       width: 48px;
-      background-image: url('../img/icon__cover__window-film.png');
+      background-image: url('../img/icon__cover__window-film.jpg');
     }
     .component.type--cover .title {
       font-size: 2rem;
@@ -1254,6 +1254,7 @@ hr.theme--light {
           right: calc(100% - 8px);
         }
         .component.type--testimonials .testimonial .image img {
+          border-radius: 50%;
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -1672,7 +1673,7 @@ hr.theme--light {
     background-size: 100%;
   }
   .component.type--visualizer .background {
-    background-image: url(../img/visualizer__background.png);
+    background-image: url(../img/visualizer__background.jpg);
   }
   .component.type--visualizer .choices {
     right: 10%;
