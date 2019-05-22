@@ -1,4 +1,3 @@
-document.addEventListener('touchstart', onTouchStart, {passive: true});
 window.addEventListener('click', function(event) {
   if(selectorGEFELBCWISC(selectorSAEFTPU(event.target, []), 'header-switcher', 'header-switcher')) {
     document.querySelector('.component.type--header').classList.toggle('status--active-menu');
