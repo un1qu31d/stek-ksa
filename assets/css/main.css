@@ -1,3 +1,4 @@
+/* RESET */
 body {
   margin: 0;
   font-size: 12pt;
@@ -262,6 +263,7 @@ hr.theme--light {
     grid-gap: 12px;
   }
     .component.type--header .logo {
+      align-self: center;
       height: 32px;
     }
     .component.type--header .slogan {
@@ -336,6 +338,9 @@ hr.theme--light {
           .component.type--header .menu > ul > li > ul > li {
             text-transform: none;
             margin: 0 24px;
+          }
+          .component.type--header .menu > ul > li > ul > li:hover {
+            color: var(--theme-primary__color--1);
           }
           .component.type--header .menu > ul > li:not(:hover) > ul > li {
             display: none;
@@ -821,6 +826,11 @@ hr.theme--light {
     grid-auto-flow: column;
     grid-gap: 12px;
   }
+  .compontent.type--social ul li {
+  }
+  .compontent.type--social ul li:hover {
+    color: var(--theme-primary__color--1);
+  }
 /* OPTIONS */
 .compontent.type--options {
   font-size: 1.4rem;
@@ -833,6 +843,9 @@ hr.theme--light {
   }
     .compontent.type--options li {
       cursor: pointer;
+    }
+    .compontent.type--options li:hover {
+      color: var(--theme-primary__color--1);
     }
 /* COPYRIGHT */
 .component.type--copyright {
@@ -866,6 +879,7 @@ hr.theme--light {
       color: #fff;
     }
       .component.type--brief .branches .details p {
+        position: relative;
       }
   .component.type--brief .card {
     position: relative;
